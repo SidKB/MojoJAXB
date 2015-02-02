@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/sampleXMLFile"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.example.org/sampleXMLFile" elementFormDefault="qualified">
+	
+	<xsd:element name="testClass">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="stringField" type="string" />
+				<xsd:element name="intField" type="int"/>
+				<xsd:element name="compleTypeClass" type="tns:complexTypeField"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:complexType name="complexTypeField">
+		<xsd:sequence>
+			<xsd:element name="firstComplexField" type="string" />
+			<xsd:element name="secondComplexFiled" type="base64Binary"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType> 
+</schema>

@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>project.sid.sample</groupId>
+  <artifactId>mojoJAXBExample</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <description>Example of mojo jaxb implelmetation to gerenate java object from xml schema </description>
+  
+  
+  <build>
+        <plugins>
+            <!-- Plugin required to build java classes from XSD using XJC -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                    <id>xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+            		<schemaDirectory>${basedir}/src/main/resources/schemas</schemaDirectory>
+               		<packageName>project.sid.sample.mojoJaxB</packageName>                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
